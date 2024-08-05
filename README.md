@@ -5,7 +5,6 @@ Allure docker service - это полноценный сервис, предос
 * Swagger здесь: [http://localhost:5050](http://localhost:5050)
 
 
-
 ## Makefile и скрипт make.sh
 Для удобного выполнения команд имеется файл Makefile. Но на Windows команда `make` не работает. Для Windows создан скрипт `make.sh` - аналог Makefile. Запускать скрипт можно в консоли GitBash.
 
@@ -39,6 +38,12 @@ make run
 После запуска доступны следующие url:
 * [http://localhost:5050](http://localhost:5050) - open api
 * [http://localhost:5252](http://localhost:5252) - сам сервис
+
+Учетные данные см. в файле `.env`:
+```text
+SECURITY_USER=...
+SECURITY_PASS=...
+```
 
 Остановить:
 ```bash
