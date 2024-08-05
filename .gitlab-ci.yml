@@ -1,0 +1,19 @@
+stages:
+  - deploy
+
+Запуск докер на удаленном сервере:
+  stage: deploy
+  tags:
+    - shell
+  before_script:
+    - eval $(ssh-agent -s)
+    - chmod 400 "$SSH_PRIVATE_KEY"
+    - ssh-add "$SSH_PRIVATE_KEY"
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $DEPLOY_SERVER_IP >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - ssh $DEPLOY_SERVER_USER@$DEPLOY_SERVER_IP 'cd $HOME/projects/allure && . scripts/deploy.sh'
+  only:
+    - master
