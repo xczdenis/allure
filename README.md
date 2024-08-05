@@ -1,16 +1,16 @@
 # Allure docker service
 Allure docker service - это полноценный сервис, предоставляющий функционал allure в докере. Подробное описание см. [здесь](https://github.com/fescobar/allure-docker-service).
 
-* Сервис доступен здесь: [http://172.22.194.60:5252](http://172.22.194.60:5252) (guest:qwerty123)
-* Swagger здесь: [http://172.22.194.60:5050](http://172.22.194.60:5050)
+* Сервис доступен здесь: [http://localhost:5252](http://localhost:5252)
+* Swagger здесь: [http://localhost:5050](http://localhost:5050)
 
 Если при запуске сервиса вы получаете вот такую ошибку, то нужно почистить куки браузера (почистить историю):
-![network-error](docs/network-error.png)
+![network-error.png](docs%2Fnetwork-error.png)
 
 ## Makefile и скрипт make.sh
 Для удобного выполнения команд имеется файл Makefile. Но на Windows команда `make` не работает. Для Windows создан скрипт `make.sh` - аналог Makefile. Запускать скрипт можно в консоли GitBash (устанавливается вместе с Git):
 
-![gitbash](docs/gitbash.png)
+![gitbash.png](docs%2Fgitbash.png)
 
 Например, команда `env` с помощью скрипта `make.sh` выполняется так:
 ```bash
